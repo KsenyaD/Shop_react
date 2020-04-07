@@ -1,38 +1,332 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class], ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class], ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background-color: #4C2481;
+    font-family: 'Rubik', sans-serif;
+    font-weight: lighter;
+    color: #EBD1B7;
+    height: 100%;
+}
+
+/*стили для фона начало*/
+.wrapper-background {
+    position: fixed;
+    height: 100vh;
+}
+
+.img-overlay-left {
+    position: absolute;
+    width: 2639px;
+    height: 2628px;
+    margin-left: -1650px;
+    margin-top: -1613px;
+    background: radial-gradient(50% 50% at 50% 50%, #6131A0 50%, rgba(109, 68, 164, 0.548306) 100%, rgba(97, 49, 160, 0) 99.81%);
+}
+
+.img-circle {
+    position: absolute;
+    width: 464px;
+    height: 464px;
+    margin-left: 795px;
+    margin-top: 32px;
+    border-radius: 50%;
+    background-color: #5BAFDE;
+}
+
+.common-pik-food {
+    background: url("./img/background/common-pik-food.png");
+    position: absolute;
+    width: 638px;
+    height: 606px;
+    margin-left: 795px;
+    margin-top: 42px;
+}
+
+.img-overlay-right {
+    position: absolute;
+    width: 3072px;
+    height: 3088px;
+    margin-left: -12px;
+    margin-top: 426px;
+    background: radial-gradient(50% 50% at 50% 50%, #6131A0 50%, rgba(109, 68, 164, 0.548306) 100%, rgba(97, 49, 160, 0) 99.81%);
+}
+
+/*стили для фона конец*/
 .App {
-  text-align: center;
+
+    position: absolute;
 }
 
+/*стили тулбар начало*/
+.Toolbar__list {
+    text-transform: capitalize;
+    overflow: hidden;
+    margin-top: 40px;
+    box-sizing: border-box;
+    border-color: transparent;
+    width: 600px;
+}
+
+.Toolbar__list a {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 21px;
+    width: 24%;
+    cursor: pointer;
+}
+
+
+.Toolbar__list a:active {
+    font-weight: bold;
+}
+
+/*стили тулбар конец*/
+/*основная информация стили начало*/
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
+.General-info-wrap {
+    margin-top: 105px;
+}
+
+.General-info-img {
+    width: 110px;
+    height: 216px;
+    background: url("./img/background/ellipse1.png") no-repeat;
+    display: inline-block;
+    float: left;
+}
+
+.Title-one {
+    font-size: 90px;
+    line-height: 80px;
+    vertical-align: top;
+    padding-left: 150px;
+    padding-top: 40px;
+}
+
+.Title-two {
+    font-size: 90px;
+    line-height: 80px;
+    color: white;
+    vertical-align: top;
+    padding-left: 150px;
+}
+
+.Short-title-wrap {
+    margin-top: 40px;
+}
+
+.Short-title {
+    font-family: Rufina, sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: capitalize;
+    border-left: 2px solid #EBD1B7; /* Параметры линии */
+    margin-left: 170px; /* Отступ слева */
+    padding-left: 27px;
+    max-width: 560px;
+}
+
+.Title-all-products {
+    margin-top: 180px;
+    padding-left: 150px;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.Subtitle-all-products {
+    margin-left: 100px;
+    display: inline-block;
+    border: 2px solid #EBD1B7;
+    height: 40px;
+    width: 360px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: url("./img/frame/Frame-search.png") no-repeat;
+    background-position: left;
+    background-position-x: 1.5%;
+}
+
+.Subtitle-all-products input {
+    border: none;
+    height: 25px;
+    background-color: transparent;
+    color: #EBD1B7;
+    border-left: 2px solid #EBD1B7;
+    margin-left: 40px; /*потом поменять размеры, заготовка*/
+    padding-left: 12px;
+    margin-top: 5px;
+    outline: none;
+    width: 85%;
+}
+
+input::-webkit-input-placeholder {
+    color: #EBD1B7;
+}
+
+/*основная информация стили конец*/
+
+
+/*стили картички продуктов начало*/
+.Products_wrap {
+    max-width: 1200px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 150px;
+    margin-top: 40px;
+}
+
+.Products_wrap-info {
+    height: 270px;
+    width: 590px;/*по итогу проверить ширину при резиновой верстке*/
+    display: flex;
+    justify-content: space-between;
+}
+.Products-info {
+    background-color: white;
+    width: 50%; /*при загрузке картинок поменять на мах ширину*/
+}
+
+.Products-img {
+    background-color: #E5E5E5;
+    width: 50%; /*при загрузке картинок поменять на мах ширину*/
+    height: 270px;
+}
+
+
+.Products-title {
+    font-size: 30px;
+    line-height: 36px;
+    text-align: right;
+    color: #4C2481;
+    margin-top: 50px;
+    margin-right: 25px;
+}
+
+.Products-price {
+    font-size: 25px;
+    line-height: 30px;
+    text-align: right;
+    color: #717073;
+    margin-right: 25px;
+}
+
+.Products-button {
+    color: #4C2481;
+    font-size: 20px;
+    line-height: 24px;
+    border: 1px solid #4C2481;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 44px;
+    width: 180px;
+    font-weight: normal;
+    margin-left: 85px;
+    margin-top: 60px;
+}
+
+
+/*стили картички продуктов конец*/
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
