@@ -181,7 +181,8 @@ function Cart(props) {
     let changeShow = props.changeShow;
     let show = props.show;
     let cartDropdownVisibility = "cart-dropdown";
-
+    let buyProducts = props.buyProducts;
+    let array = Array.from(buyProducts.keys())
     if (show === false) {
         cartDropdownVisibility = "Cart-dropdown__not_show"
     }
@@ -192,17 +193,24 @@ function Cart(props) {
         }}>
             <p className="Mini-cart__label">CART</p>
             <div className="Mini-cart__amount">4</div>
-
             <div className={cartDropdownVisibility}>
-                <div className="cart-dropdown__items">
-                    Test
-                </div>
+                {array.map((value, index) => {
+                    return (
+                        <div>
+                            <div className="cart-dropdown__items">
+                                {value}
+                            </div>
+                            <div>{buyProducts.get(value)}</div>
+                        </div>
+                    )
+                })}
                 <div className="cart-dropdown__bottom">
                     <div className="cart-dropdown__total_wrap">
                         <span className="cart-dropdown__total">Total:</span>
                         <button className="pure-button cart-dropdown__button">CHECKOUT</button>
                     </div>
                 </div>
+
             </div>
         </div>
     );
@@ -258,6 +266,7 @@ class Search extends React.Component {
 
 function Products(props) {
     let array = props.array;
+    let addProductsInCart = props.addProductsInCart;
     /*доделать отображение последнего элемента*/
     return (
         <div className="Products_wrap">
@@ -265,7 +274,7 @@ function Products(props) {
                 let positionProducts = "position_products";
                 let ProductsWrapInfo = "Products_wrap-info";
                 let row = Math.floor(index / 2);
-                if (row % 2 === 0) {
+                if (row % 2 === 1) {
                     ProductsWrapInfo += " " + positionProducts;
                 }
                 return (
@@ -274,7 +283,7 @@ function Products(props) {
                             <h3 className="Products-title">{value.name}</h3>
                             <p className="Products-price">{value.price} P.</p>
                             <button className="pure-button" onClick={() => {
-                                /*функция{value.name}*/
+                                addProductsInCart(value.name)
                             }}>ADD IN CART
                             </button>
                         </div>
@@ -297,6 +306,7 @@ class App extends React.Component {
             category: "Main",
             text: "",
             show: false,
+            buyProducts: new Map(),
         };
     }
 
@@ -329,7 +339,16 @@ class App extends React.Component {
         }
     }
 
-
+    addProductsInCart(productName) {
+        let buyProductsMap = this.state.buyProducts;
+        let amount = buyProductsMap.get(productName);
+        if (amount !== undefined) {
+            buyProductsMap.set(productName, amount + 1)
+        } else buyProductsMap.set(productName, 1);
+        this.setState({
+            buyProducts: buyProductsMap,
+        })
+    }
 
 
     render() {
@@ -337,11 +356,12 @@ class App extends React.Component {
         return (
             <div className="App">
                 <Toolbar category={this.state.category} setCategory={this.setCategory.bind(this)}/>
-                <Cart show={this.state.show} changeShow={this.changeShow.bind(this)}/>
+                <Cart show={this.state.show} changeShow={this.changeShow.bind(this)}
+                      buyProducts={this.state.buyProducts}/>
                 <Feedback/>
                 <InfoOfShop/>
                 <Search searchProducts={this.searchProducts.bind(this)}/>
-                <Products array={this.state.array}/>
+                <Products array={this.state.array} addProductsInCart={this.addProductsInCart.bind(this)}/>
             </div>
         )
     }
