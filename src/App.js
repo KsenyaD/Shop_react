@@ -11,7 +11,7 @@ let allItemsArray = [
         price: 800,
         category: "Electronics",
         popularity: 1,
-        imgFile: "mikser.png",
+        imageUrl: require("./img/items_img/electronicks/mikser.png"),
         discounts: [
             {
                 count: 3,
@@ -28,6 +28,7 @@ let allItemsArray = [
         price: 400,
         category: "Electronics",
         popularity: 3,
+        imageUrl: require("./img/items_img/electronicks/kettle.png"),
 
     },
     {
@@ -35,18 +36,21 @@ let allItemsArray = [
         price: 300,
         category: "Electronics",
         popularity: 4,
-    },
-    {
-        name: "Fridge",
-        price: 1100,
-        category: "Electronics",
-        popularity: 20,
+        imageUrl: require("./img/items_img/electronicks/iron.png"),
     },
     {
         name: "Hairdryer",
         price: 100,
         category: "Electronics",
         popularity: 21,
+        imageUrl: require("./img/items_img/electronicks/hairdryer.png"),
+    },
+    {
+        name: "Fridge",
+        price: 1100,
+        category: "Electronics",
+        popularity: 20,
+        imageUrl: require("./img/items_img/electronicks/fridge.png"),
     },
     /*electronics end*/
     /*dishes start*/
@@ -55,30 +59,35 @@ let allItemsArray = [
         price: 15,
         category: "Dishes",
         popularity: 15,
+        imageUrl: require("./img/items_img/dishes/fork.png"),
     },
     {
         name: "Knife",
         price: 500,
         category: "Dishes",
         popularity: 53,
+        imageUrl: require("./img/items_img/dishes/knife.png"),
     },
     {
         name: "Plate",
         price: 110,
         category: "Dishes",
         popularity: 52,
+        imageUrl: require("./img/items_img/dishes/plate.png"),
     },
     {
         name: "Spoon",
         price: 20,
         category: "Dishes",
         popularity: 35,
+        imageUrl: require("./img/items_img/dishes/spoon.png"),
     },
     {
         name: "Cup",
         price: 300,
         category: "Dishes",
         popularity: 45,
+        imageUrl: require("./img/items_img/dishes/cup.png"),
     },
     /*dishes end */
     /*food start*/ // text == value.text
@@ -87,77 +96,126 @@ let allItemsArray = [
         price: 500,
         category: "Food",
         popularity: 75,
+        imageUrl: require("./img/items_img/foods/cheese.png"),
     },
     {
         name: "Pasta",
         price: 200,
         category: "Food",
         popularity: 95,
+        imageUrl: require("./img/items_img/foods/pasta.png"),
     },
     {
         name: "Cake",
         price: 600,
         category: "Food",
         popularity: 95,
+        imageUrl: require("./img/items_img/foods/cake.png"),
     },
     {
         name: "Butter",
         price: 200,
         category: "Food",
         popularity: 85,
+        imageUrl: require("./img/items_img/foods/butter.png"),
     },
     {
         name: "Crisps",
         price: 80,
         category: "Food",
         popularity: 75,
+        imageUrl: require("./img/items_img/foods/crisps.png"),
     }
 ];
 
 
-class Toolbar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.setCategory = props.setCategory;
+function Toolbar(props) {
+
+    let setCategory = props.setCategory;
+    let category = props.category;
+
+    let main = "";
+    if (category === "Main") {
+        main = "Toolbar__Bold"
     }
 
-    render() {
-        return (
-            <div className="Toolbar__list">
-                <a onClick={() => {
-                    this.setCategory("Main")
-                }}>Main
-                </a>
-                <a onClick={() => {
-                    this.setCategory("Electronics")
-                }}>Electronics
-                </a>
-                <a onClick={() => {
-                    this.setCategory("Dishes")
-                }}>Dishes
-                </a>
-                <a onClick={() => {
-                    this.setCategory("Food")
-                }}>Food
-                </a>
-            </div>
-        )
+    let electronics = "";
+    if (category === "Electronics") {
+        electronics = "Toolbar__Bold"
     }
+
+    let dishes = "";
+    if (category === "Dishes") {
+        dishes = "Toolbar__Bold"
+    }
+
+    let food = "";
+    if (category === "Food") {
+        food = "Toolbar__Bold"
+    }
+
+    return (
+        <div className="Toolbar__list">
+            <a className={main} onClick={() => {
+                setCategory("Main")
+            }}>Main
+            </a>
+            <a className={electronics} onClick={() => {
+                setCategory("Electronics")
+            }}>Electronics
+            </a>
+            <a className={dishes} onClick={() => {
+                setCategory("Dishes")
+            }}>Dishes
+            </a>
+            <a className={food} onClick={() => {
+                setCategory("Food")
+            }}>Food
+            </a>
+        </div>
+    )
+
 }
 
-class Cart extends React.Component {
+function Cart(props) {
+    let changeShow = props.changeShow;
+    let show = props.show;
+    let cartDropdownVisibility = "cart-dropdown";
+
+    if (show === false) {
+        cartDropdownVisibility = "Cart-dropdown__not_show"
+    }
+
+    return (
+        <div className="Mini-cart__content" onClick={() => {
+            changeShow()
+        }}>
+            <p className="Mini-cart__label">CART</p>
+            <div className="Mini-cart__amount">4</div>
+
+            <div className={cartDropdownVisibility}>
+                <div className="cart-dropdown__items">
+                    Test
+                </div>
+                <div className="cart-dropdown__bottom">
+                    <div className="cart-dropdown__total_wrap">
+                        <span className="cart-dropdown__total">Total:</span>
+                        <button className="pure-button cart-dropdown__button">CHECKOUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
+class Feedback extends React.Component {
     render() {
         return (
-            <div className="Cart_wrapper">
-                <p>Cart</p>
+            <div className="Feedback__content">
             </div>
         );
     }
-
-    //количество указать
-}
-
-class Feedback {
 
 }
 
@@ -197,12 +255,16 @@ class Search extends React.Component {
     }
 }
 
-class Category {
-
-}
 
 function Products(props) {
     let array = props.array;
+    let lengthArray = array.length + 1;
+    let ProductsImgWidth = "Products-img";
+    if (lengthArray % 2 === 1) {
+
+    }
+
+    /*доделать отображение элементов*/
     return (
         <div className="Products_wrap">
             {array.map((value, index) => {
@@ -211,9 +273,11 @@ function Products(props) {
                         <div className="Products-info">
                             <h3 className="Products-title">{value.name}</h3>
                             <p className="Products-price">{value.price} P.</p>
-                            <button className="Products-button">ADD IN CART</button>
+                            <button className="pure-button">ADD IN CART</button>
                         </div>
-                        <div className="Products-img">{value.imgFile}</div>
+                        <div className="Products-img-wrap">
+                            <img className="Products-img" src={value.imageUrl}/>
+                        </div>
                     </div>
                 )
             })
@@ -227,10 +291,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            array1: allItemsArray,
             array: allItemsArray,
             category: "Main",
             text: "",
+            show: false,
         };
     }
 
@@ -250,11 +314,27 @@ class App extends React.Component {
         });
     }
 
+    changeShow() {
+        let cartButtonPressed = this.state.show;
+        if (cartButtonPressed === true) {
+            this.setState({
+                show: false,
+            })
+        } else {
+            this.setState({
+                show: true,
+            })
+        }
+    }
+
+
     render() {
 
         return (
             <div className="App">
-                <Toolbar setCategory={this.setCategory.bind(this)}/>
+                <Toolbar category={this.state.category} setCategory={this.setCategory.bind(this)}/>
+                <Cart show={this.state.show} changeShow={this.changeShow.bind(this)}/>
+                <Feedback/>
                 <InfoOfShop/>
                 <Search searchProducts={this.searchProducts.bind(this)}/>
                 <Products array={this.state.array}/>

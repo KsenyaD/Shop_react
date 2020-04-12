@@ -118,7 +118,6 @@ input, button, textarea, select {
 
 /*стили для фона конец*/
 .App {
-
     position: absolute;
 }
 
@@ -130,6 +129,7 @@ input, button, textarea, select {
     box-sizing: border-box;
     border-color: transparent;
     width: 600px;
+    position: fixed;
 }
 
 .Toolbar__list a {
@@ -142,12 +142,117 @@ input, button, textarea, select {
     cursor: pointer;
 }
 
+.Toolbar__Bold {
+    font-weight: bold;
+}
 
 .Toolbar__list a:active {
     font-weight: bold;
 }
 
 /*стили тулбар конец*/
+
+/*стили корзина начало*/
+.Mini-cart__content {
+    position: fixed;
+    top: 27px;
+    right: 2%; /*пока поставила такой отступ, доделать*/
+    display: flex;
+    z-index: 1;
+}
+
+.Mini-cart__label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 19px;
+    margin-right: 17px;
+}
+
+.Mini-cart__amount {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 55px;
+    text-align: center;
+    border: 1px solid #EBD1B7;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    vertical-align: middle;
+    horiz-align: center;
+    cursor: pointer;
+}
+
+/*стили корзина конец*/
+
+/*стили корзина (выпадающее окно) начало*/
+.cart-dropdown {
+    position: fixed;
+    width: 300px;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    right: 30px; /*подобрать % или px*/
+    background-color: #6131A0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    flex-flow: column nowrap;
+}
+.Cart-dropdown__not_show {
+    display: none;
+}
+
+.cart-dropdown__items {
+    align-items: center;
+    padding: 0 15px;
+    overflow: auto;
+    flex: 1 1 auto;
+}
+
+.cart-dropdown__bottom {
+    border-top: 1px solid #ededf2;
+    padding: 14px 15px;
+    flex: 0 0 auto;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+.cart-dropdown__total_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-dropdown__total {
+    padding-top: 3px;
+}
+
+.cart-dropdown__button {
+    margin: 0px;
+    font-size: 18px;
+    line-height: 21px;
+    width: 50%;
+    height: 30px;
+}
+
+/*стили корзина (выпадающее окно) конец*/
+
+/* стили фидбек начало*/
+.Feedback__content {
+    position: fixed;
+    right: 2%; /*пока поставила такой отступ, доделать*/
+    display: flex;
+    background: url("../src/img/frame/frame-feedback.png") no-repeat;
+    width: 55px;
+    height: 55px;
+    top: 65%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* стили фидбек конец*/
+
 /*основная информация стили начало*/
 .App-logo {
     height: 40vmin;
@@ -232,6 +337,7 @@ input, button, textarea, select {
     margin-top: 5px;
     outline: none;
     width: 85%;
+    cursor: pointer;
 }
 
 input::-webkit-input-placeholder {
@@ -246,27 +352,39 @@ input::-webkit-input-placeholder {
     max-width: 1200px;
     flex-wrap: wrap;
     display: flex;
-    margin-left: 150px;
+    margin-left: 80px;
+    margin-right: 100px;
     margin-top: 40px;
 }
 
 .Products_wrap-info {
     height: 270px;
-    width: 590px;/*по итогу проверить ширину при резиновой верстке*/
+    width: 50%; /*по итогу проверить ширину при резиновой верстке*/
     display: flex;
     justify-content: space-between;
 }
+
+
 .Products-info {
     background-color: white;
     width: 50%; /*при загрузке картинок поменять на мах ширину*/
 }
 
-.Products-img {
+.Products-img-wrap {
     background-color: #E5E5E5;
     width: 50%; /*при загрузке картинок поменять на мах ширину*/
-    height: 270px;
+    height: auto;
+    position: relative;
 }
 
+.Products-img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
 
 .Products-title {
     font-size: 30px;
@@ -285,7 +403,7 @@ input::-webkit-input-placeholder {
     margin-right: 25px;
 }
 
-.Products-button {
+.pure-button {
     color: #4C2481;
     font-size: 20px;
     line-height: 24px;
@@ -295,12 +413,22 @@ input::-webkit-input-placeholder {
     height: 44px;
     width: 180px;
     font-weight: normal;
-    margin-left: 85px;
     margin-top: 60px;
+    float: right;
+    margin-right: 25px;
+    cursor: pointer;
+    outline:none;
 }
+.pure-button:hover {
+     color:white;
+     background: #4C2481;
+ }
+
 
 
 /*стили картички продуктов конец*/
+
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
