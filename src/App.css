@@ -357,6 +357,10 @@ input::-webkit-input-placeholder {
     margin-top: 40px;
 }
 
+.position_products {
+    flex-direction: row-reverse; /*проверить почему при переключении категории уменьшается ширина блоков*/
+}
+
 .Products_wrap-info {
     height: 270px;
     width: 50%; /*по итогу проверить ширину при резиновой верстке*/
