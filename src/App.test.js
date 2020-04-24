@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 import App from './App';
-import filter from "./utils/FilterUtils";
+import filter from "./utils/filterUtils";
 
 test('работу фильтра по категориям и имени', () => {
 
