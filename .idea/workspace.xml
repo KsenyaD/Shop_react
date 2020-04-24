@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2e3b1ff8-5893-4e49-ab55-a7be5284d38b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +35,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/shop_react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -50,10 +52,10 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ксения\WebstormProjects\shop_react\src" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ксения\WebstormProjects\shop_react\src" />
     </key>
   </component>
@@ -96,6 +98,12 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/shop_react/public/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -108,6 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.App.js" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Jest.работу фильтра по категориям и имени" />
         <item itemvalue="Jest.App.test.js" />
       </list>
@@ -139,7 +149,18 @@
       <workItem from="1586357143470" duration="1663000" />
       <workItem from="1586423685346" duration="20103000" />
       <workItem from="1586512384360" duration="15887000" />
-      <workItem from="1586694338141" duration="16808000" />
+      <workItem from="1586694338141" duration="17033000" />
+      <workItem from="1586769262342" duration="74000" />
+      <workItem from="1587306214379" duration="7100000" />
+      <workItem from="1587322891583" duration="958000" />
+      <workItem from="1587373668635" duration="3247000" />
+      <workItem from="1587402585028" duration="2343000" />
+      <workItem from="1587461775582" duration="599000" />
+      <workItem from="1587547393515" duration="12715000" />
+      <workItem from="1587630791288" duration="5139000" />
+      <workItem from="1587658193842" duration="3863000" />
+      <workItem from="1587721555278" duration="3262000" />
+      <workItem from="1587744316290" duration="553000" />
     </task>
     <servers />
   </component>
@@ -158,17 +179,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

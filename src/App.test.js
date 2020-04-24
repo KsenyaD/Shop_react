@@ -11,9 +11,9 @@ test('работу фильтра по категориям и имени', () =
         {name: "Kettle", category: "Electronics"},
         {name: "Iron", category: "Electronics"},
         {name: "Plate", category: "Dishes"},
-    ]
+    ];
     let result = filter(array, "Electronics", "" );
-    expect(result.length).toEqual(3)
+    expect(result.length).toEqual(3);
 
   result = filter(array, "Electronics", "r" );
   expect(result.length).toEqual(2)

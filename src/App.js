@@ -131,6 +131,16 @@ let allItemsArray = [
 
 function Toolbar(props) {
 
+    window.onscroll = () => {
+        const header = document.querySelector('.Toolbar__list');
+        if (window.pageYOffset > 50) {
+            header.classList.add('Toolbar__Bold_active');
+        } else {
+            header.classList.remove('Toolbar__Bold_active');
+        }
+    }
+    ;
+
     let setCategory = props.setCategory;
     let category = props.category;
 
@@ -180,34 +190,71 @@ function Toolbar(props) {
 function Cart(props) {
     let changeShow = props.changeShow;
     let show = props.show;
+    let addProductsInCart = props.addProductsInCart;
+    let minusProduct = props.minusProduct;
+    let removeProducts = props.removeProducts;
     let cartDropdownVisibility = "cart-dropdown";
     let buyProducts = props.buyProducts;
-    let array = Array.from(buyProducts.keys())
+    let arrayKeys = Array.from(buyProducts.keys());
     if (show === false) {
         cartDropdownVisibility = "Cart-dropdown__not_show"
     }
-
+    let total = 0;
     return (
         <div className="Mini-cart__content" onClick={() => {
             changeShow()
         }}>
             <p className="Mini-cart__label">CART</p>
-            <div className="Mini-cart__amount">4</div>
+            <div className="Mini-cart__amount">{arrayKeys.length}</div>
+
             <div className={cartDropdownVisibility}>
-                {array.map((value, index) => {
+                {arrayKeys.map((value, index) => {
+                    const product = allItemsArray.find((element) => {
+                        return element.name === value
+                    });
+                    let count = buyProducts.get(value);
+                    const productTotal = count * product.price;
+                    total += productTotal;
                     return (
-                        <div>
+
+                        <div className={"product-in-cart"}>
+                            <div className="cart-dropdown__nn">{index + 1}.</div>
                             <div className="cart-dropdown__items">
                                 {value}
                             </div>
-                            <div>{buyProducts.get(value)}</div>
+                            <div className="cart-dropdown__price">
+                                {productTotal} P.
+                            </div>
+                            <div className={"count"}>
+                                <div className={"count__minus"} onClick={() => {
+                                    minusProduct(value)
+                                }}>
+                                    <img src="https://img.icons8.com/ios-glyphs/30/000000/minus-math.png"/>
+                                </div>
+                                <p>{count}</p>
+                                <div className={"count__plus"}
+                                     onClick={() => {
+                                         addProductsInCart(value)
+                                     }}>
+                                    <img src="https://img.icons8.com/ios-glyphs/30/000000/plus-math.png"/>
+                                </div>
+                            </div>
+                            <div className={"cart__remove"}
+                                 onClick={() => {
+                                     removeProducts(value)
+                                 }}
+                            >
+                                <img src="https://img.icons8.com/android/24/000000/full-trash.png"/>
+                            </div>
                         </div>
+
                     )
                 })}
                 <div className="cart-dropdown__bottom">
                     <div className="cart-dropdown__total_wrap">
                         <span className="cart-dropdown__total">Total:</span>
-                        <button className="pure-button cart-dropdown__button">CHECKOUT</button>
+                        <p className="total">{total} P.</p>
+                        <button className="cart-dropdown__button pure-button">CHECKOUT</button>
                     </div>
                 </div>
 
@@ -350,6 +397,29 @@ class App extends React.Component {
         })
     }
 
+    minusProduct(product) {
+        let buyProductsMap = this.state.buyProducts;
+        let amount = buyProductsMap.get(product); //нашла количество
+        if (amount > 1) {
+            buyProductsMap.set(product, amount - 1)
+        } else buyProductsMap.set(product, 1);
+
+        this.setState({
+            buyProducts: buyProductsMap,
+        });
+
+    }
+
+    removeProducts(product) {
+        let buyProductsMap = this.state.buyProducts;
+        let amount = buyProductsMap.get(product);
+        if (amount !== undefined) {
+            buyProductsMap.delete(product)
+        }
+        this.setState({
+            buyProducts: buyProductsMap,
+        });
+    }
 
     render() {
 
@@ -357,7 +427,10 @@ class App extends React.Component {
             <div className="App">
                 <Toolbar category={this.state.category} setCategory={this.setCategory.bind(this)}/>
                 <Cart show={this.state.show} changeShow={this.changeShow.bind(this)}
-                      buyProducts={this.state.buyProducts}/>
+                      buyProducts={this.state.buyProducts} minusProduct={this.minusProduct.bind(this)}
+                      addProductsInCart={this.addProductsInCart.bind(this)}
+                      removeProducts={this.removeProducts.bind(this)}
+                />
                 <Feedback/>
                 <InfoOfShop/>
                 <Search searchProducts={this.searchProducts.bind(this)}/>

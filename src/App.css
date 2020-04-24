@@ -125,10 +125,11 @@ input, button, textarea, select {
 .Toolbar__list {
     text-transform: capitalize;
     overflow: hidden;
-    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 30px;
     box-sizing: border-box;
     border-color: transparent;
-    width: 600px;
+    width: 100%;
     position: fixed;
 }
 
@@ -138,7 +139,7 @@ input, button, textarea, select {
     text-decoration: none;
     font-size: 18px;
     line-height: 21px;
-    width: 24%;
+    width: 144px;
     cursor: pointer;
 }
 
@@ -150,6 +151,10 @@ input, button, textarea, select {
     font-weight: bold;
 }
 
+.Toolbar__Bold_active {
+    background-color: #4C2481;
+    z-index: 1;
+}
 /*стили тулбар конец*/
 
 /*стили корзина начало*/
@@ -191,24 +196,60 @@ input, button, textarea, select {
 /*стили корзина (выпадающее окно) начало*/
 .cart-dropdown {
     position: fixed;
-    width: 300px;
     height: auto;
+    width: 400px;
     min-height: 0;
     display: flex;
-    right: 30px; /*подобрать % или px*/
+    right: 2%; /*подобрать % или px*/
     background-color: #6131A0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
     flex-flow: column nowrap;
 }
+
 .Cart-dropdown__not_show {
     display: none;
 }
 
+.product-in-cart {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px 0 20px;
+    box-shadow: 0 2px 2px -2px #E5E5E5;
+}
+
+.cart-dropdown__nn {
+    margin-right: 20px;
+}
+
 .cart-dropdown__items {
-    align-items: center;
-    padding: 0 15px;
-    overflow: auto;
-    flex: 1 1 auto;
+    /* padding: 0 15px;*/
+    width: 80px;
+}
+
+
+.cart-dropdown__price {
+    width: 80px;
+    margin: 0 20px 0 20px; /*возможно надо будет поправить*/
+}
+
+.count {
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+}
+
+.count__minus, .count__plus {
+    width: 20px;
+    height: 20px;
+}
+
+
+.cart__remove {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin-left: 50px;
 }
 
 .cart-dropdown__bottom {
@@ -220,21 +261,14 @@ input, button, textarea, select {
 }
 
 .cart-dropdown__total_wrap {
-    display: flex;
     justify-content: space-between;
 }
 
-.cart-dropdown__total {
-    padding-top: 3px;
+.total {
+    margin-left: 95px;
+    display: inline-block;
 }
 
-.cart-dropdown__button {
-    margin: 0px;
-    font-size: 18px;
-    line-height: 21px;
-    width: 50%;
-    height: 30px;
-}
 
 /*стили корзина (выпадающее окно) конец*/
 
@@ -246,7 +280,7 @@ input, button, textarea, select {
     background: url("../src/img/frame/frame-feedback.png") no-repeat;
     width: 55px;
     height: 55px;
-    top: 65%;
+    top: 90%;
     z-index: 1;
     cursor: pointer;
 }
@@ -260,7 +294,7 @@ input, button, textarea, select {
 }
 
 .General-info-wrap {
-    margin-top: 105px;
+    margin-top: 155px;
 }
 
 .General-info-img {
@@ -346,7 +380,6 @@ input::-webkit-input-placeholder {
 
 /*основная информация стили конец*/
 
-
 /*стили картички продуктов начало*/
 .Products_wrap {
     max-width: 1200px;
@@ -421,17 +454,23 @@ input::-webkit-input-placeholder {
     float: right;
     margin-right: 25px;
     cursor: pointer;
-    outline:none;
-}
-.pure-button:hover {
-     color:white;
-     background: #4C2481;
- }
+    outline: none;
 
+}
+
+.pure-button:hover {
+    color: white;
+}
 
 
 /*стили картички продуктов конец*/
-
+.cart-dropdown__button {
+    margin: 0;
+    font-size: 18px;
+    line-height: 21px;
+    width: 120px;
+    height: 30px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
