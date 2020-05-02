@@ -90,7 +90,7 @@ class App extends React.Component {
     render() {
 
         return (
-            <div className="App">
+            <div className="site-content-holder">
                 <Toolbar category={this.state.category} setCategory={this.setCategory.bind(this)}/>
                 <Cart show={this.state.show} changeShow={this.changeShow.bind(this)}
                       buyProducts={this.state.buyProducts} minusProduct={this.minusProduct.bind(this)}

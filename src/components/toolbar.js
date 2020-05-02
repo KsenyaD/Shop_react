@@ -3,11 +3,11 @@ import React from "react";
 function Toolbar(props) {
 
     window.onscroll = () => {
-        const header = document.querySelector('.Toolbar__list');
+        const header = document.querySelector('.toolbar__list');
         if (window.pageYOffset > 50) {
-            header.classList.add('Toolbar__Bold_active');
+            header.classList.add('toolbar__bold_active');
         } else {
-            header.classList.remove('Toolbar__Bold_active');
+            header.classList.remove('toolbar__bold_active');
         }
     }
     ;
@@ -17,26 +17,26 @@ function Toolbar(props) {
 
     let main = "";
     if (category === "Main") {
-        main = "Toolbar__Bold"
+        main = "toolbar__bold"
     }
 
     let electronics = "";
     if (category === "Electronics") {
-        electronics = "Toolbar__Bold"
+        electronics = "toolbar__bold"
     }
 
     let dishes = "";
     if (category === "Dishes") {
-        dishes = "Toolbar__Bold"
+        dishes = "toolbar__bold"
     }
 
     let food = "";
     if (category === "Food") {
-        food = "Toolbar__Bold"
+        food = "toolbar__bold"
     }
 
     return (
-        <div className="Toolbar__list">
+        <div className="toolbar__list">
             <a className={main} onClick={() => {
                 setCategory("Main")
             }}>Main

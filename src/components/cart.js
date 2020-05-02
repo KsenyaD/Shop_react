@@ -11,15 +11,15 @@ function Cart(props) {
     let buyProducts = props.buyProducts;
     let arrayKeys = Array.from(buyProducts.keys());
     if (show === false) {
-        cartDropdownVisibility = "Cart-dropdown__not_show"
+        cartDropdownVisibility = "cart-dropdown__not_show"
     }
     let total = 0;
     return (
-        <div className="Mini-cart__content" onClick={() => {
+        <div className="mini-cart__content" onClick={() => {
             changeShow()
         }}>
-            <p className="Mini-cart__label">CART</p>
-            <div className="Mini-cart__amount">{arrayKeys.length}</div>
+            <p className="mini-cart__label">CART</p>
+            <div className="mini-cart__amount">{arrayKeys.length}</div>
 
             <div className={cartDropdownVisibility}>
                 {arrayKeys.map((value, index) => {
@@ -68,7 +68,7 @@ function Cart(props) {
                     <div className="cart-dropdown__total_wrap">
                         <span className="cart-dropdown__total">Total:</span>
                         <p className="total">{total} P.</p>
-                        <button className="cart-dropdown__button pure-button">CHECKOUT</button>
+                        <button className="cart-dropdown__button add-in-cart_button">CHECKOUT</button>
                     </div>
                 </div>
 

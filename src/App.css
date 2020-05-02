@@ -116,13 +116,14 @@ input, button, textarea, select {
     background: radial-gradient(50% 50% at 50% 50%, #6131A0 50%, rgba(109, 68, 164, 0.548306) 100%, rgba(97, 49, 160, 0) 99.81%);
 }
 
+
 /*стили для фона конец*/
-.App {
+.site-content-holder {
     position: absolute;
 }
 
 /*стили тулбар начало*/
-.Toolbar__list {
+.toolbar__list {
     text-transform: capitalize;
     overflow: hidden;
     padding-top: 40px;
@@ -133,7 +134,7 @@ input, button, textarea, select {
     position: fixed;
 }
 
-.Toolbar__list a {
+.toolbar__list a {
     float: left;
     text-align: center;
     text-decoration: none;
@@ -143,22 +144,23 @@ input, button, textarea, select {
     cursor: pointer;
 }
 
-.Toolbar__Bold {
+.toolbar__bold {
     font-weight: bold;
 }
 
-.Toolbar__list a:active {
+.toolbar__list a:active {
     font-weight: bold;
 }
 
-.Toolbar__Bold_active {
+.toolbar__bold_active {
     background-color: #4C2481;
     z-index: 1;
 }
+
 /*стили тулбар конец*/
 
 /*стили корзина начало*/
-.Mini-cart__content {
+.mini-cart__content {
     position: fixed;
     top: 27px;
     right: 2%; /*пока поставила такой отступ, доделать*/
@@ -166,7 +168,7 @@ input, button, textarea, select {
     z-index: 1;
 }
 
-.Mini-cart__label {
+.mini-cart__label {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -175,7 +177,7 @@ input, button, textarea, select {
     margin-right: 17px;
 }
 
-.Mini-cart__amount {
+.mini-cart__amount {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -206,7 +208,7 @@ input, button, textarea, select {
     flex-flow: column nowrap;
 }
 
-.Cart-dropdown__not_show {
+.cart-dropdown__not_show {
     display: none;
 }
 
@@ -226,7 +228,6 @@ input, button, textarea, select {
     /* padding: 0 15px;*/
     width: 80px;
 }
-
 
 .cart-dropdown__price {
     width: 80px;
@@ -269,11 +270,10 @@ input, button, textarea, select {
     display: inline-block;
 }
 
-
 /*стили корзина (выпадающее окно) конец*/
 
 /* стили фидбек начало*/
-.Feedback__content {
+.feedback__content {
     position: fixed;
     right: 2%; /*пока поставила такой отступ, доделать*/
     display: flex;
@@ -288,16 +288,12 @@ input, button, textarea, select {
 /* стили фидбек конец*/
 
 /*основная информация стили начало*/
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
 
-.General-info-wrap {
+.general-info-wrap {
     margin-top: 155px;
 }
 
-.General-info-img {
+.general-info-img {
     width: 110px;
     height: 216px;
     background: url("./img/background/ellipse1.png") no-repeat;
@@ -305,7 +301,7 @@ input, button, textarea, select {
     float: left;
 }
 
-.Title-one {
+.title-one {
     font-size: 90px;
     line-height: 80px;
     vertical-align: top;
@@ -313,7 +309,7 @@ input, button, textarea, select {
     padding-top: 40px;
 }
 
-.Title-two {
+.title-two {
     font-size: 90px;
     line-height: 80px;
     color: white;
@@ -321,11 +317,11 @@ input, button, textarea, select {
     padding-left: 150px;
 }
 
-.Short-title-wrap {
+.short-title-wrap {
     margin-top: 40px;
 }
 
-.Short-title {
+.short-title {
     font-family: Rufina, sans-serif;
     font-style: normal;
     font-weight: lighter;
@@ -338,7 +334,7 @@ input, button, textarea, select {
     max-width: 560px;
 }
 
-.Title-all-products {
+.title-all-products {
     margin-top: 180px;
     padding-left: 150px;
     display: inline-block;
@@ -347,7 +343,7 @@ input, button, textarea, select {
     font-weight: bold;
 }
 
-.Subtitle-all-products {
+.subtitle-all-products {
     margin-left: 100px;
     display: inline-block;
     border: 2px solid #EBD1B7;
@@ -360,7 +356,7 @@ input, button, textarea, select {
     background-position-x: 1.5%;
 }
 
-.Subtitle-all-products input {
+.subtitle-all-products input {
     border: none;
     height: 25px;
     background-color: transparent;
@@ -381,40 +377,37 @@ input::-webkit-input-placeholder {
 /*основная информация стили конец*/
 
 /*стили картички продуктов начало*/
-.Products_wrap {
+.products_wrap {
     max-width: 1200px;
     flex-wrap: wrap;
     display: flex;
-    margin-left: 80px;
-    margin-right: 100px;
-    margin-top: 40px;
+    margin: 40px 100px 55px 80px;
 }
 
 .position_products {
     flex-direction: row-reverse; /*проверить почему при переключении категории уменьшается ширина блоков*/
 }
 
-.Products_wrap-info {
+.products_wrap-info {
     height: 270px;
     width: 50%; /*по итогу проверить ширину при резиновой верстке*/
     display: flex;
     justify-content: space-between;
 }
 
-
-.Products-info {
+.products-info {
     background-color: white;
     width: 50%; /*при загрузке картинок поменять на мах ширину*/
 }
 
-.Products-img-wrap {
+.products-img-wrap {
     background-color: #E5E5E5;
     width: 50%; /*при загрузке картинок поменять на мах ширину*/
     height: auto;
     position: relative;
 }
 
-.Products-img {
+.products-img {
     position: absolute;
     margin: auto;
     left: 0;
@@ -423,7 +416,7 @@ input::-webkit-input-placeholder {
     right: 0;
 }
 
-.Products-title {
+.products-title {
     font-size: 30px;
     line-height: 36px;
     text-align: right;
@@ -432,7 +425,7 @@ input::-webkit-input-placeholder {
     margin-right: 25px;
 }
 
-.Products-price {
+.products-price {
     font-size: 25px;
     line-height: 30px;
     text-align: right;
@@ -440,7 +433,7 @@ input::-webkit-input-placeholder {
     margin-right: 25px;
 }
 
-.pure-button {
+.add-in-cart_button {
     color: #4C2481;
     font-size: 20px;
     line-height: 24px;
@@ -455,49 +448,111 @@ input::-webkit-input-placeholder {
     margin-right: 25px;
     cursor: pointer;
     outline: none;
-
+    transition: 0.5s;
 }
 
-.pure-button:hover {
+
+.add-in-cart_button:hover {
     color: white;
+    background: #4C2481;
 }
-
 
 /*стили картички продуктов конец*/
-.cart-dropdown__button {
-    margin: 0;
-    font-size: 18px;
-    line-height: 21px;
-    width: 120px;
-    height: 30px;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+
+@media (max-width: 1100px) and (min-width: 768px) {
+    .mini-cart__content {
+        top: 22px;
+    }
+
+    .products_wrap {
+        margin: 40px 10px 20px 10px;
+    }
+
+    .title-all-products {
+        padding-left: 10px;
+    }
+
+    .subtitle-all-products {
+        margin-top: -40px;
+        position: absolute;
+        right: 1%;
+        width: 300px;
+    }
+
+    .products_wrap-info {
+        height: 230px;
+    }
+
+    .products-title {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .products-price {
+        font-size: 20px;
+    }
+
+    .add-in-cart_button {
+        margin-top: 25px;
+        margin-right: 10px;
+        width: 150px;
+    }
+
+    .cart-dropdown {
+        width: 377px;
+        right: 1%;
+    }
+
+    .cart-dropdown__bottom {
+        padding: 10px;
     }
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
+@media (max-width: 768px) {
 
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+    .subtitle-all-products {
+        margin-top: -40px;
+        position: absolute;
+        right: 2%;
+        height: 50px;
     }
-    to {
-        transform: rotate(360deg);
+
+    .subtitle-all-products input {
+        height: 38px;
+    }
+
+    .title-all-products {
+        padding-left: 20px;
+        font-size: 24px;
+    }
+
+    .products_wrap {
+        margin: 40px 10px 20px 10px;
+    }
+
+    .products_wrap-info {
+        width: 100%;
+    }
+
+    .products_wrap-info {
+        height: 350px;
+    }
+
+    .products-title {
+        font-size: 36px;
+        margin-top: 80px;
+    }
+
+    .products-price {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    .add-in-cart_button {
+        width: 80%;
+        height: 55px;
+        border-radius: 25px;
+        margin-top: 70px;
     }
 }

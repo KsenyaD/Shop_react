@@ -118,10 +118,18 @@
       <scripts>
         <script value="start" />
       </scripts>
-      <node-interpreter value="project" />
+      <node-interpreter value="$APPLICATION_CONFIG_DIR$/node/node-v10.16.0-win-x64/node" />
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Jest.App.test.js" />
+      <item itemvalue="Jest.работу фильтра по категориям и имени" />
+      <item itemvalue="Node.js.App.js" />
+      <item itemvalue="npm.npm start" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.App.js" />
@@ -169,6 +177,7 @@
       <workItem from="1587658193842" duration="3863000" />
       <workItem from="1587721555278" duration="3262000" />
       <workItem from="1587744316290" duration="553000" />
+      <workItem from="1588438354826" duration="11426000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,7 @@ class Search extends React.Component {
 
     render() {
         return (
-            <form className="Subtitle-all-products">
+            <form className="subtitle-all-products">
                 <input type="text" placeholder="Search..." onChange={(event) => {
                     this.searchProducts(event.target.value)
                 }}/>
