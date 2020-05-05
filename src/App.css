@@ -120,6 +120,7 @@ input, button, textarea, select {
 /*стили для фона конец*/
 .site-content-holder {
     position: absolute;
+    width: 100%;
 }
 
 /*стили тулбар начало*/
@@ -132,6 +133,9 @@ input, button, textarea, select {
     border-color: transparent;
     width: 100%;
     position: fixed;
+    -webkit-transition: .2s linear;
+    -o-transition: .2s linear;
+    transition: .2s linear;
 }
 
 .toolbar__list a {
@@ -452,7 +456,7 @@ input::-webkit-input-placeholder {
 }
 
 
-.add-in-cart_button:hover {
+.add-in-cart_button:hover{
     color: white;
     background: #4C2481;
 }
@@ -460,7 +464,7 @@ input::-webkit-input-placeholder {
 /*стили картички продуктов конец*/
 
 
-@media (max-width: 1100px) and (min-width: 768px) {
+@media (max-width: 1100px) and (min-width: 767px) {
     .mini-cart__content {
         top: 22px;
     }
@@ -509,7 +513,8 @@ input::-webkit-input-placeholder {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+
 
     .subtitle-all-products {
         margin-top: -40px;
