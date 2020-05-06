@@ -603,7 +603,12 @@ input::-webkit-input-placeholder {
 }
 
 @media (max-width: 320px) {
-
+    .toolbar__list a {
+        display: none;
+    }
+    .mini-cart__content {
+        top: 10px;
+    }
     .general-info-img {
         display: none;
     }
