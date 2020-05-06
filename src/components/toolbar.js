@@ -53,6 +53,11 @@ function Toolbar(props) {
                 setCategory("Food")
             }}>Food
             </a>
+            <div className="header_burger burger">
+                <span className="burger_line burger_line_first"/>
+                <span className="burger_line burger_line_second"/>
+                <span className="burger_line burger_line_third"/>
+            </div>
         </div>
     )
 
