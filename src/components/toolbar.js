@@ -46,7 +46,7 @@ function Toolbar(props) {
     return (
         <div className="toolbar__list">
             <nav className={toolbarNav}>
-                <a href="products_search" className={main} onClick={() => {
+                <a href="#" className={main} onClick={() => {
                     setCategory("Main");
                     changeMenuDisplay(false)
                 }}>Main</a>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import filter from "./utils/filterUtils";
 import Cart from "./components/cart";
@@ -11,6 +11,10 @@ import Products from "./components/products";
 import _ from "./utils/appearsMenuBar";
 
 class App extends React.Component {
+
+    state = {};
+    ref = null;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -29,12 +33,24 @@ class App extends React.Component {
         })
     }
 
+    updateRefToProducts(ref){
+        this.ref = ref
+    }
+
     setCategory(categoryName) {
-        let array = filter(allItemsArray, categoryName, this.state.text);
+        const array = filter(allItemsArray, categoryName, this.state.text);
         this.setState({
             array: array,
             category: categoryName,
         });
+
+        const  ref = this.ref;
+        setTimeout(function() {
+            window.scrollTo({
+                behavior: "smooth",
+                top: ref.current.offsetTop - 120
+            });
+        }, 100);
     }
 
     searchProducts(text) {
@@ -107,8 +123,11 @@ class App extends React.Component {
 
                 <Feedback/>
                 <InfoOfShop/>
-                <Search searchProducts={this.searchProducts.bind(this)}/>
-                <Products array={this.state.array} addProductsInCart={this.addProductsInCart.bind(this)}/>
+                <Search searchProducts={this.searchProducts.bind(this)}
+                        updateRefToProducts={this.updateRefToProducts.bind(this)}/>
+                <Products array={this.state.array}
+                          addProductsInCart={this.addProductsInCart.bind(this)}
+                          />
             </div>
         )
     }

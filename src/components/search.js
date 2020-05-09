@@ -1,21 +1,19 @@
-import React from "react";
+import React, {useRef} from "react";
 
 
-class Search extends React.Component {
-    constructor(props) {
-        super(props);
-        this.searchProducts = props.searchProducts
-    }
+function Search(props)  {
+    let searchProducts = props.searchProducts;
+    let updateRefToProducts = props.updateRefToProducts;
+    let ref = useRef();
+    updateRefToProducts(ref);
 
-    render() {
-        return (
-            <form className="products_search">
-                <input type="text" placeholder="Search..." onChange={(event) => {
-                    this.searchProducts(event.target.value)
-                }}/>
-            </form>
-        )
-    }
+    return (
+        <form className="products_search" ref={ref}>
+            <input type="text" placeholder="Search..." onChange={(event) => {
+                searchProducts(event.target.value)
+            }}/>
+        </form>
+    );
 }
 
 export default Search
