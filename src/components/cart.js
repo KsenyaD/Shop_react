@@ -1,19 +1,30 @@
 import React from "react";
 import allItemsArray from "../utils/allItemsArray";
 
+/**
+ * @return {null}
+ */
+
 function Cart(props) {
     let changeShow = props.changeShow;
-    let show = props.show;
+    let cartShow = props.cartShow;
     let addProductsInCart = props.addProductsInCart;
     let minusProduct = props.minusProduct;
     let removeProducts = props.removeProducts;
     let cartDropdownVisibility = "cart-dropdown";
     let buyProducts = props.buyProducts;
     let arrayKeys = Array.from(buyProducts.keys());
-    if (show === false) {
+    let menuDisplay = props.menuDisplay;
+
+    if (menuDisplay) {
+        return null;
+    }
+
+    if (cartShow === false) {
         cartDropdownVisibility = "cart-dropdown__not_show"
     }
     let total = 0;
+
     return (
         <div className="mini-cart__content" onClick={() => {
             changeShow()
@@ -56,8 +67,7 @@ function Cart(props) {
                             <div className={"cart__remove"}
                                  onClick={() => {
                                      removeProducts(value)
-                                 }}
-                            >
+                                 }}>
                                 <img src="https://img.icons8.com/android/24/000000/full-trash.png"/>
                             </div>
                         </div>
@@ -68,7 +78,7 @@ function Cart(props) {
                     <div className="cart-dropdown__total_wrap">
                         <span className="cart-dropdown__total">Total:</span>
                         <p className="total">{total} P.</p>
-                        <button className="cart-dropdown__button add-in-cart_button">CHECKOUT</button>
+                        <button className="cart-dropdown__button">CHECKOUT</button>
                     </div>
                 </div>
 
