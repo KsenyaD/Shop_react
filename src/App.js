@@ -11,7 +11,6 @@ import Products from "./components/products";
 import _ from "./utils/appearsMenuBar";
 
 class App extends React.Component {
-
     state = {};
     ref = null;
 
@@ -33,7 +32,7 @@ class App extends React.Component {
         })
     }
 
-    updateRefToProducts(ref){
+    updateRefToProducts(ref) {
         this.ref = ref
     }
 
@@ -44,13 +43,16 @@ class App extends React.Component {
             category: categoryName,
         });
 
-        const  ref = this.ref;
-        setTimeout(function() {
-            window.scrollTo({
-                behavior: "smooth",
-                top: ref.current.offsetTop - 120
-            });
-        }, 100);
+        const ref = this.ref;
+        if (this.state.menuDisplay) {
+            setTimeout(function () {
+                window.scrollTo({
+                    behavior: "smooth",
+                    top: ref.current.offsetTop - 120
+                });
+            }, 100);
+        }
+
     }
 
     searchProducts(text) {
@@ -116,7 +118,8 @@ class App extends React.Component {
                 <Toolbar menuDisplay={this.state.menuDisplay} changeMenuDisplay={this.changeMenuDisplay.bind(this)}
                          category={this.state.category} setCategory={this.setCategory.bind(this)}/>
 
-                <Cart menuDisplay={this.state.menuDisplay} cartShow={this.state.cartShow} changeShow={this.changeShow.bind(this)}
+                <Cart menuDisplay={this.state.menuDisplay} cartShow={this.state.cartShow}
+                      changeShow={this.changeShow.bind(this)}
                       buyProducts={this.state.buyProducts} minusProduct={this.minusProduct.bind(this)}
                       addProductsInCart={this.addProductsInCart.bind(this)}
                       removeProducts={this.removeProducts.bind(this)}/>
@@ -127,7 +130,7 @@ class App extends React.Component {
                         updateRefToProducts={this.updateRefToProducts.bind(this)}/>
                 <Products array={this.state.array}
                           addProductsInCart={this.addProductsInCart.bind(this)}
-                          />
+                />
             </div>
         )
     }

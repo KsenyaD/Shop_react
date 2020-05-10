@@ -3,7 +3,6 @@ import React, {useRef} from "react";
 function Products(props) {
     let array = props.array;
     let addProductsInCart = props.addProductsInCart;
-
     /*доделать отображение последнего элемента*/
     return (
         <div className="products_wrap">
