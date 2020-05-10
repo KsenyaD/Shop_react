@@ -27,6 +27,17 @@ class App extends React.Component {
     }
 
     changeMenuDisplay(show) {
+
+        if (this.state.menuDisplay && !show) {
+            const ref = this.ref;
+            setTimeout(function () {
+                window.scrollTo({
+                    behavior: "smooth",
+                    top: ref.current.offsetTop - 120
+                });
+            }, 100);
+        }
+
         this.setState({
             menuDisplay: show,
         })
@@ -42,17 +53,6 @@ class App extends React.Component {
             array: array,
             category: categoryName,
         });
-
-        const ref = this.ref;
-        if (this.state.menuDisplay) {
-            setTimeout(function () {
-                window.scrollTo({
-                    behavior: "smooth",
-                    top: ref.current.offsetTop - 120
-                });
-            }, 100);
-        }
-
     }
 
     searchProducts(text) {

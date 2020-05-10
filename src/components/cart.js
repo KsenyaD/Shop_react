@@ -71,7 +71,6 @@ function Cart(props) {
                                 <img src="https://img.icons8.com/android/24/000000/full-trash.png"/>
                             </div>
                         </div>
-
                     )
                 })}
                 <div className="cart-dropdown__bottom">
@@ -81,7 +80,6 @@ function Cart(props) {
                         <button className="cart-dropdown__button">CHECKOUT</button>
                     </div>
                 </div>
-
             </div>
         </div>
     );
