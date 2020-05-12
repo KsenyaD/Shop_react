@@ -26,11 +26,11 @@ function Cart(props) {
     let total = 0;
 
     return (
-        <div className="mini-cart__content" onClick={() => {
-            changeShow()
-        }}>
+        <div className="mini-cart__content" >
             <p className="mini-cart__label">CART</p>
-            <div className="mini-cart__amount">{arrayKeys.length}</div>
+            <div className="mini-cart__amount"onClick={() => {
+                changeShow()
+            }}>{arrayKeys.length}</div>
 
             <div className={cartDropdownVisibility}>
                 {arrayKeys.map((value, index) => {
