@@ -326,7 +326,8 @@ input, button, textarea, select {
 /*стили корзина (выпадающее окно) конец*/
 
 /* стили фидбек начало*/
-.feedback__content {
+
+.feedback__label {
     position: fixed;
     right: 2%; /*пока поставила такой отступ, доделать*/
     display: flex;
@@ -822,7 +823,7 @@ input::-webkit-input-placeholder {
         width: auto;
     }
 
-    .feedback__content {
+    .feedback__label {
         display: none;
     }
 }

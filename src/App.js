@@ -1,13 +1,13 @@
 import React, {useRef} from 'react';
 import './App.css';
 import filter from "./utils/filterUtils";
-import Cart from "./components/cart";
+import Cart from "./components/Cart";
 import allItemsArray from "./utils/allItemsArray";
-import Toolbar from "./components/toolbar";
-import Feedback from "./components/feedback";
-import InfoOfShop from "./components/infoOfShop";
-import Search from "./components/search";
-import Products from "./components/products";
+import Toolbar from "./components/Toolbar";
+import Feedback from "./components/Feedback";
+import InfoOfShop from "./components/InfoOfShop";
+import Search from "./components/Search";
+import Products from "./components/Products";
 import _ from "./utils/appearsMenuBar";
 
 class App extends React.Component {
