@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/react_shop/static/css/main.56019022.chunk.css",
+    "main.js": "/react_shop/static/js/main.fdc8c988.chunk.js",
+    "main.js.map": "/react_shop/static/js/main.fdc8c988.chunk.js.map",
+    "runtime-main.js": "/react_shop/static/js/runtime-main.daa74fa5.js",
+    "runtime-main.js.map": "/react_shop/static/js/runtime-main.daa74fa5.js.map",
+    "static/js/2.2a7119de.chunk.js": "/react_shop/static/js/2.2a7119de.chunk.js",
+    "static/js/2.2a7119de.chunk.js.map": "/react_shop/static/js/2.2a7119de.chunk.js.map",
+    "index.html": "/react_shop/index.html",
+    "precache-manifest.7ae14cc801171cc24070681055d68f00.js": "/react_shop/precache-manifest.7ae14cc801171cc24070681055d68f00.js",
+    "service-worker.js": "/react_shop/service-worker.js",
+    "static/css/main.56019022.chunk.css.map": "/react_shop/static/css/main.56019022.chunk.css.map",
+    "static/js/2.2a7119de.chunk.js.LICENSE.txt": "/react_shop/static/js/2.2a7119de.chunk.js.LICENSE.txt",
+    "static/media/butter.png": "/react_shop/static/media/butter.03d8e9cc.png",
+    "static/media/cake.png": "/react_shop/static/media/cake.dc01bc73.png",
+    "static/media/cheese.png": "/react_shop/static/media/cheese.b5bd6b8c.png",
+    "static/media/App.css": "/react_shop/static/media/common-pik-food.2ab35258.png",
+    "static/media/crisps.png": "/react_shop/static/media/crisps.c5c22dcd.png",
+    "static/media/cup.png": "/react_shop/static/media/cup.7b52aae1.png",
+    "static/media/fork.png": "/react_shop/static/media/fork.0ee52fb6.png",
+    "static/media/fridge.png": "/react_shop/static/media/fridge.48fb7d1e.png",
+    "static/media/hairdryer.png": "/react_shop/static/media/hairdryer.e7e790a0.png",
+    "static/media/iron.png": "/react_shop/static/media/iron.ae28ed31.png",
+    "static/media/kettle.png": "/react_shop/static/media/kettle.21bc7407.png",
+    "static/media/knife.png": "/react_shop/static/media/knife.6ecb1e01.png",
+    "static/media/mikser.png": "/react_shop/static/media/mikser.5d93acdd.png",
+    "static/media/pasta.png": "/react_shop/static/media/pasta.7b51d29f.png",
+    "static/media/plate.png": "/react_shop/static/media/plate.d5eb3345.png",
+    "static/media/spoon.png": "/react_shop/static/media/spoon.a6d6485d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.daa74fa5.js",
+    "static/js/2.2a7119de.chunk.js",
+    "static/css/main.56019022.chunk.css",
+    "static/js/main.fdc8c988.chunk.js"
+  ]
+}
