@@ -1,6 +1,41 @@
-
-
 let allItemsArray = [
+    /*food start*/
+    {
+        name: "Pasta",
+        price: 200,
+        category: "Food",
+        popularity: 95,
+        imageUrl: require("../img/items_img/foods/pasta.png"),
+    },
+    {
+        name: "Cake",
+        price: 600,
+        category: "Food",
+        popularity: 95,
+        imageUrl: require("../img/items_img/foods/cake.png"),
+    },
+    {
+        name: "Butter",
+        price: 200,
+        category: "Food",
+        popularity: 85,
+        imageUrl: require("../img/items_img/foods/butter.png"),
+    },
+    {
+        name: "Crisps",
+        price: 80,
+        category: "Food",
+        popularity: 75,
+        imageUrl: require("../img/items_img/foods/crisps.png"),
+    },
+    {
+        name: "Cheese",
+        price: 500,
+        category: "Food",
+        popularity: 75,
+        imageUrl: require("../img/items_img/foods/cheese.png"),
+    },
+    /*food end*/
     /*electronics start*/
     {
         name: "Mixer",
@@ -86,42 +121,7 @@ let allItemsArray = [
         imageUrl: require("../img/items_img/dishes/cup.png"),
     },
     /*dishes end */
-    /*food start*/ // text == value.text
-    {
-        name: "Cheese",
-        price: 500,
-        category: "Food",
-        popularity: 75,
-        imageUrl: require("../img/items_img/foods/cheese.png"),
-    },
-    {
-        name: "Pasta",
-        price: 200,
-        category: "Food",
-        popularity: 95,
-        imageUrl: require("../img/items_img/foods/pasta.png"),
-    },
-    {
-        name: "Cake",
-        price: 600,
-        category: "Food",
-        popularity: 95,
-        imageUrl: require("../img/items_img/foods/cake.png"),
-    },
-    {
-        name: "Butter",
-        price: 200,
-        category: "Food",
-        popularity: 85,
-        imageUrl: require("../img/items_img/foods/butter.png"),
-    },
-    {
-        name: "Crisps",
-        price: 80,
-        category: "Food",
-        popularity: 75,
-        imageUrl: require("../img/items_img/foods/crisps.png"),
-    }
+
 ];
 
 export default allItemsArray;

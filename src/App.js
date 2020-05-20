@@ -27,7 +27,6 @@ class App extends React.Component {
     }
 
     changeMenuDisplay(show) {
-
         if (this.state.menuDisplay && !show) {
             const ref = this.ref;
             setTimeout(function () {
