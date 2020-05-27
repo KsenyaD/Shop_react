@@ -108,9 +108,22 @@ class App extends React.Component {
         return (
             <div className="site-content-holder" onClick={
                 (event) => {
-                    const cartDropdownExist = event.nativeEvent.path.some(event =>
-                        event.className === "cart-dropdown"
-                    );
+                    const cartDropdown = document.querySelector(".cart-dropdown");
+                    if (cartDropdown === null) return;
+                    debugger
+                    let cartDropdownExist = event.target === cartDropdown;
+                    if (!cartDropdownExist) {
+                        let element = event.target.parentElement;
+                        do {
+                            if (element === cartDropdown){
+                                cartDropdownExist = true;
+                                break
+                            }
+                            element = element.parentElement;
+                        }
+                        while (element !== null)
+                    }
+
                     if (!cartDropdownExist) {
                         if (this.state.cartShow) {
                             this.changeShow()

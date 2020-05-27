@@ -31,6 +31,7 @@ ul[class], ol[class] {
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
+    -webkit-text-decoration-skip: ink;
     text-decoration-skip-ink: auto;
 }
 
@@ -53,7 +54,9 @@ input, button, textarea, select {
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
     * {
+        -webkit-animation-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
@@ -147,8 +150,6 @@ input, button, textarea, select {
 
 .burger_line_second {
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -165,8 +166,6 @@ input, button, textarea, select {
     border-color: transparent;
     width: 100%;
     position: fixed;
-    -webkit-transition: .2s linear;
-    -o-transition: .2s linear;
     transition: .2s linear;
 }
 
@@ -632,14 +631,10 @@ input::-webkit-input-placeholder {
     }
 
     .toolbar_nav-close-line:first-child {
-        -webkit-transform: translateY(-50%) rotate(45deg);
-        -ms-transform: translateY(-50%) rotate(45deg);
         transform: translateY(-50%) rotate(45deg);
     }
 
     .toolbar_nav-close-line:last-child {
-        -webkit-transform: translateY(-50%) rotate(-45deg);
-        -ms-transform: translateY(-50%) rotate(-45deg);
         transform: translateY(-50%) rotate(-45deg);
     }
 
@@ -658,12 +653,8 @@ input::-webkit-input-placeholder {
         top: 0;
         left: 0;
         padding: 75px;
-        -webkit-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
         transform: translateX(-100%);
         background-color: black;
-        -webkit-transition: .2s all linear;
-        -o-transition: .2s all linear;
         transition: .2s all linear;
         z-index: 1;
     }
@@ -674,8 +665,6 @@ input::-webkit-input-placeholder {
         font-size: 36px;
     }
     .toolbar__nav_active {
-        -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
         transform: translateX(0);
     }
 
@@ -827,3 +816,4 @@ input::-webkit-input-placeholder {
         display: none;
     }
 }
+/*# sourceMappingURL=main.css.map */
