@@ -88,6 +88,7 @@ input, button, textarea, select {
     height: 2628px;
     margin-left: -1650px;
     margin-top: -1613px;
+    border-radius: 50%;
     background: radial-gradient(50% 50% at 50% 50%, #6131A0 50%, rgba(109, 68, 164, 0.548306) 100%, rgba(97, 49, 160, 0) 99.81%);
 }
 
@@ -116,7 +117,8 @@ input, button, textarea, select {
     height: 3088px;
     margin-left: -12px;
     margin-top: 426px;
-    background: radial-gradient(50% 50% at 50% 50%, #6131A0 50%, rgba(109, 68, 164, 0.548306) 100%, rgba(97, 49, 160, 0) 99.81%);
+    border-radius: 50%;
+    background: radial-gradient(#6131A0 50%, rgba(109, 68, 164, 0.548306) 100%, rgba(97, 49, 160, 0) 99.81%);
 }
 
 
