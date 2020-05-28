@@ -110,7 +110,6 @@ class App extends React.Component {
                 (event) => {
                     const cartDropdown = document.querySelector(".cart-dropdown");
                     if (cartDropdown === null) return;
-                    debugger
                     let cartDropdownExist = event.target === cartDropdown;
                     if (!cartDropdownExist) {
                         let element = event.target.parentElement;

@@ -308,9 +308,12 @@ input, button, textarea, select {
 }
 
 .cart-dropdown__button {
+    border: 1px solid black;
+    background-color: white;
     color: #4C2481;
     font-size: 18px;
     line-height: 21px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 15px;
     height: 35px;
@@ -319,7 +322,14 @@ input, button, textarea, select {
     float: right;
     cursor: pointer;
     outline: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
+}
+
+.cart-dropdown__button:hover {
+color: white;
+    background-color: #4C2481;
 }
 
 /*стили корзина (выпадающее окно) конец*/
@@ -487,6 +497,7 @@ input::-webkit-input-placeholder {
 }
 
 .add-in-cart_button {
+    background-color: white;
     color: #4C2481;
     font-size: 20px;
     line-height: 24px;
