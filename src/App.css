@@ -322,9 +322,10 @@ input, button, textarea, select {
     float: right;
     cursor: pointer;
     outline: none;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    -moz-transition: 0.7s;
+    transition: 0.7s;
 }
 
 .cart-dropdown__button:hover {
@@ -461,6 +462,9 @@ input::-webkit-input-placeholder {
 .products-info {
     background-color: white;
     width: 50%; /*при загрузке картинок поменять на мах ширину*/
+    -webkit-box-sizing: padding-box;
+    -moz-box-sizing: padding-box;
+    box-sizing: border-box;
 }
 
 .products-img-wrap {
@@ -502,6 +506,7 @@ input::-webkit-input-placeholder {
     font-size: 20px;
     line-height: 24px;
     border: 1px solid #4C2481;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 15px;
     height: 44px;
@@ -512,8 +517,12 @@ input::-webkit-input-placeholder {
     margin-right: 25px;
     cursor: pointer;
     outline: none;
-    transition: 0.5s;
-}
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    -moz-transition: 0.7s;
+    transition: 0.7s;
+
+    }
 
 
 .add-in-cart_button:hover {
@@ -784,6 +793,7 @@ input::-webkit-input-placeholder {
 
     .products-info {
         width: 100%;
+        height: 200px;
         display: flex;
         flex-wrap: wrap;
     }
