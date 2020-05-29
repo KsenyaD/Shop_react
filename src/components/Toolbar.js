@@ -15,7 +15,6 @@ function Toolbar(props) {
 
 
     let toolbarNav = "toolbar__nav";
-
     if (menuDisplay) {
         toolbarNav += " toolbar__nav_active"
     }

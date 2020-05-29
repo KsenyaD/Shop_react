@@ -28,7 +28,7 @@ function Cart(props) {
     return (
         <div className="mini-cart__content" >
             <p className="mini-cart__label">CART</p>
-            <div className="mini-cart__amount"onClick={() => {
+            <div className="mini-cart__amount" onClick={() => {
                 changeShow()
             }}>{arrayKeys.length}</div>
 

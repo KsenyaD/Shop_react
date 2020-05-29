@@ -27,7 +27,7 @@ class App extends React.Component {
     }
 
     changeMenuDisplay(show) {
-        if (this.state.menuDisplay && !show) {
+        if (!show) {
             const ref = this.ref;
             setTimeout(function () {
                 window.scrollTo({
