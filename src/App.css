@@ -161,7 +161,6 @@ input, button, textarea, select {
 
 .toolbar__list {
     text-transform: capitalize;
-    overflow: hidden;
     padding-top: 40px;
     padding-bottom: 30px;
     box-sizing: border-box;
