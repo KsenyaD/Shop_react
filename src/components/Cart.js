@@ -6,6 +6,7 @@ import allItemsArray from "../utils/allItemsArray";
  */
 
 function Cart(props) {
+    let cleanCart = props.cleanCart;
     let changeShow = props.changeShow;
     let cartShow = props.cartShow;
     let addProductsInCart = props.addProductsInCart;
@@ -15,7 +16,7 @@ function Cart(props) {
     let buyProducts = props.buyProducts;
     let arrayKeys = Array.from(buyProducts.keys());
     let menuDisplay = props.menuDisplay;
-
+    let showPopup = props.showPopup;
     if (menuDisplay) {
         return null;
     }
@@ -77,7 +78,10 @@ function Cart(props) {
                     <div className="cart-dropdown__total_wrap">
                         <span className="cart-dropdown__total">Total:</span>
                         <p className="total">{total} P.</p>
-                        <button className="cart-dropdown__button">CHECKOUT</button>
+                        <button className="cart-dropdown__button" onClick={()=>{
+                            showPopup("Thanks for your order!");
+                            cleanCart()
+                        }}>CHECKOUT</button>
                     </div>
                 </div>
             </div>

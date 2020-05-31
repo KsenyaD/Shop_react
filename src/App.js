@@ -8,7 +8,7 @@ import Feedback from "./components/Feedback";
 import InfoOfShop from "./components/InfoOfShop";
 import Search from "./components/Search";
 import Products from "./components/Products";
-import _ from "./utils/appearsMenuBar";
+import Popup from "./components/Popup";
 
 class App extends React.Component {
     state = {};
@@ -23,7 +23,30 @@ class App extends React.Component {
             cartShow: false,
             buyProducts: new Map(),
             menuDisplay: false,
+            popupMsg: undefined,
         };
+    }
+
+    closePopup() {
+        this.setState({
+            popupMsg: undefined,
+        })
+    }
+
+    cleanCart() {
+        this.setState({
+            buyProducts: new Map(),
+        })
+    }
+
+    showPopup(massage) {
+
+        this.setState({
+            popupMsg: {
+                type: "info",
+                msg: massage
+            }
+        })
     }
 
     changeMenuDisplay(show) {
@@ -105,6 +128,8 @@ class App extends React.Component {
     }
 
     render() {
+        const popupMsg = this.state.popupMsg;
+
         return (
             <div className="site-content-holder" onClick={
                 (event) => {
@@ -114,7 +139,7 @@ class App extends React.Component {
                     if (!cartDropdownExist) {
                         let element = event.target.parentElement;
                         do {
-                            if (element === cartDropdown){
+                            if (element === cartDropdown) {
                                 cartDropdownExist = true;
                                 break
                             }
@@ -130,22 +155,24 @@ class App extends React.Component {
                     }
                 }
             }>
+                {popupMsg ?
+                    <Popup popupMsg={this.state.popupMsg} closePopup={this.closePopup.bind(this)}/>
+                    : null
+                }
+
                 <Toolbar menuDisplay={this.state.menuDisplay} changeMenuDisplay={this.changeMenuDisplay.bind(this)}
                          category={this.state.category} setCategory={this.setCategory.bind(this)}/>
 
-                <Cart menuDisplay={this.state.menuDisplay} cartShow={this.state.cartShow}
-                      changeShow={this.changeShow.bind(this)}
+                <Cart cleanCart={this.cleanCart.bind(this)} showPopup={this.showPopup.bind(this)} menuDisplay={this.state.menuDisplay}
+                      cartShow={this.state.cartShow} changeShow={this.changeShow.bind(this)}
                       buyProducts={this.state.buyProducts} minusProduct={this.minusProduct.bind(this)}
                       addProductsInCart={this.addProductsInCart.bind(this)}
                       removeProducts={this.removeProducts.bind(this)}/>
-
                 <Feedback/>
                 <InfoOfShop/>
                 <Search searchProducts={this.searchProducts.bind(this)}
                         updateRefToProducts={this.updateRefToProducts.bind(this)}/>
-                <Products array={this.state.array}
-                          addProductsInCart={this.addProductsInCart.bind(this)}
-                />
+                <Products array={this.state.array} addProductsInCart={this.addProductsInCart.bind(this)}/>
             </div>
         )
     }
