@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react_shop/static/css/main.d49036ed.chunk.css",
-    "main.js": "/react_shop/static/js/main.fb8a7490.chunk.js",
-    "main.js.map": "/react_shop/static/js/main.fb8a7490.chunk.js.map",
-    "runtime-main.js": "/react_shop/static/js/runtime-main.daa74fa5.js",
-    "runtime-main.js.map": "/react_shop/static/js/runtime-main.daa74fa5.js.map",
-    "static/js/2.2a7119de.chunk.js": "/react_shop/static/js/2.2a7119de.chunk.js",
-    "static/js/2.2a7119de.chunk.js.map": "/react_shop/static/js/2.2a7119de.chunk.js.map",
+    "main.css": "/react_shop/static/css/main.edc905a8.chunk.css",
+    "main.js": "/react_shop/static/js/main.ad3e62fd.chunk.js",
+    "main.js.map": "/react_shop/static/js/main.ad3e62fd.chunk.js.map",
+    "runtime-main.js": "/react_shop/static/js/runtime-main.f538d4e1.js",
+    "runtime-main.js.map": "/react_shop/static/js/runtime-main.f538d4e1.js.map",
+    "static/js/2.9f6ebe67.chunk.js": "/react_shop/static/js/2.9f6ebe67.chunk.js",
+    "static/js/2.9f6ebe67.chunk.js.map": "/react_shop/static/js/2.9f6ebe67.chunk.js.map",
     "index.html": "/react_shop/index.html",
-    "precache-manifest.cbf13e171cdd0e7a53dff65e66cc9e7a.js": "/react_shop/precache-manifest.cbf13e171cdd0e7a53dff65e66cc9e7a.js",
+    "precache-manifest.213b636a6ccc538944f3c78da6fb658d.js": "/react_shop/precache-manifest.213b636a6ccc538944f3c78da6fb658d.js",
     "service-worker.js": "/react_shop/service-worker.js",
-    "static/css/main.d49036ed.chunk.css.map": "/react_shop/static/css/main.d49036ed.chunk.css.map",
-    "static/js/2.2a7119de.chunk.js.LICENSE.txt": "/react_shop/static/js/2.2a7119de.chunk.js.LICENSE.txt",
+    "static/css/main.edc905a8.chunk.css.map": "/react_shop/static/css/main.edc905a8.chunk.css.map",
+    "static/js/2.9f6ebe67.chunk.js.LICENSE.txt": "/react_shop/static/js/2.9f6ebe67.chunk.js.LICENSE.txt",
     "static/media/butter.png": "/react_shop/static/media/butter.03d8e9cc.png",
     "static/media/cake.png": "/react_shop/static/media/cake.dc01bc73.png",
     "static/media/cheese.png": "/react_shop/static/media/cheese.b5bd6b8c.png",
@@ -30,9 +30,9 @@
     "static/media/spoon.png": "/react_shop/static/media/spoon.a6d6485d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.daa74fa5.js",
-    "static/js/2.2a7119de.chunk.js",
-    "static/css/main.d49036ed.chunk.css",
-    "static/js/main.fb8a7490.chunk.js"
+    "static/js/runtime-main.f538d4e1.js",
+    "static/js/2.9f6ebe67.chunk.js",
+    "static/css/main.edc905a8.chunk.css",
+    "static/js/main.ad3e62fd.chunk.js"
   ]
 }
