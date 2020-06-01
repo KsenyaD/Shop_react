@@ -1,13 +1,14 @@
 import React from "react";
 
+function Feedback(props) {
+    const showPopupAction = props.showPopupAction;
 
-class Feedback extends React.Component {
-    render() {
-        return (
-            <div className="feedback__label">
-            </div>
-        );
-    }
+    return (
+        <div className="feedback__label" onClick={() => {
+            showPopupAction("Under development")
+        }}>
+        </div>
+    );
 }
 
 export default Feedback

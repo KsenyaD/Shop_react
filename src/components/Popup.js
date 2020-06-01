@@ -10,7 +10,6 @@ class Popup extends React.Component {
 
     componentDidMount() {
         this.timerID = setTimeout(() => {
-
                 this.closePopup()
             }, 5000
         )
@@ -22,7 +21,7 @@ class Popup extends React.Component {
 
 
     render() {
-        let popupMsg = this.props.popupMsg;
+        const popupMsg = this.props.popupMsg;
         if (popupMsg === undefined) {
             return null
         }

@@ -164,7 +164,7 @@ class App extends React.Component {
                       minusProductAction={this.minusProduct.bind(this)}
                       addProductsInCartAction={this.addProductsInCart.bind(this)}
                       removeProductsAction={this.removeProducts.bind(this)}/>
-                <Feedback/>
+                <Feedback showPopupAction={this.showPopup.bind(this)}/>
                 <InfoOfShop/>
                 <Search searchProducts={this.searchProducts.bind(this)}
                         updateRefToProducts={this.updateRefToProducts.bind(this)}/>
