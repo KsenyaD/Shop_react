@@ -4,10 +4,10 @@ function Feedback(props) {
     const showPopupAction = props.showPopupAction;
 
     return (
-        <div className="feedback__label" onClick={() => {
+        <section className="feedback__label" onClick={() => {
             showPopupAction("Under development")
         }}>
-        </div>
+        </section>
     );
 }
 
