@@ -18,7 +18,7 @@ function mapToJSX(arrayKeys, buyProducts, minusProductAction, addProductsInCartA
         const product = allItemsArray.find((element) => {
             return element.name === value
         });
-        let count = buyProducts.get(value);
+        const count = buyProducts.get(value);
         const productTotal = count * product.price;
         // total += productTotal;
         return (
@@ -116,7 +116,6 @@ function Cart(props) {
                         </button>
                     </section>
                 </div>
-
             </div>
         </div>
     );

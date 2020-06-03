@@ -2,9 +2,9 @@ import React, {useRef} from "react";
 
 
 function Search(props)  {
-    let searchProducts = props.searchProducts;
-    let updateRefToProducts = props.updateRefToProducts;
-    let ref = useRef();
+    const searchProducts = props.searchProducts;
+    const updateRefToProducts = props.updateRefToProducts;
+    const ref = useRef();
     updateRefToProducts(ref);
 
     return (

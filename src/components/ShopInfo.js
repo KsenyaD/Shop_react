@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class InfoOfShop extends React.Component {
+class ShopInfo extends React.Component {
     render() {
         return (
             <div className="general-info-wrap">
@@ -13,10 +13,9 @@ class InfoOfShop extends React.Component {
                         stock.</p>
                 </div>
                 <p className="title-all-products">PRODUCTS</p>
-
             </div>
         );
     }
 }
 
-export default InfoOfShop
+export default ShopInfo

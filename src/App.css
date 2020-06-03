@@ -353,7 +353,7 @@ input, button, textarea, select {
 }
 
 .cart-dropdown__button:hover {
-color: white;
+    color: white;
     background-color: #4C2481;
 }
 
@@ -465,6 +465,14 @@ input::-webkit-input-placeholder {
 /*основная информация стили конец*/
 
 /*стили картички продуктов начало*/
+.no-products-in-cart {
+    height: 300px;
+    width: 200px;
+    display: block;
+    margin: 60px auto 0;
+    font-size: 22px;
+}
+
 .products_wrap {
     max-width: 1200px;
     flex-wrap: wrap;

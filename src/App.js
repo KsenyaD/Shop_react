@@ -5,7 +5,7 @@ import Cart from "./components/Cart";
 import allItemsArray from "./utils/allItemsArray";
 import Toolbar from "./components/Toolbar";
 import Feedback from "./components/Feedback";
-import InfoOfShop from "./components/InfoOfShop";
+import ShopInfo from "./components/ShopInfo";
 import Search from "./components/Search";
 import Products from "./components/Products";
 import Popup from "./components/Popup";
@@ -78,7 +78,7 @@ class App extends React.Component {
     }
 
     searchProducts(text) {
-        let array = filter(allItemsArray, this.state.category, text);
+        const array = filter(allItemsArray, this.state.category, text);
         this.setState({
             text: text,
             array: array,
@@ -86,15 +86,15 @@ class App extends React.Component {
     }
 
     changeShow() {
-        let cartButtonPressed = !this.state.cartShow;
+        const cartButtonPressed = !this.state.cartShow;
         this.setState({
             cartShow: cartButtonPressed,
         })
     }
 
     addProductsInCart(productName) {
-        let buyProductsMap = this.state.buyProducts;
-        let amount = buyProductsMap.get(productName);
+        const buyProductsMap = this.state.buyProducts;
+        const amount = buyProductsMap.get(productName);
         if (amount !== undefined) {
             buyProductsMap.set(productName, amount + 1)
         } else buyProductsMap.set(productName, 1);
@@ -104,7 +104,7 @@ class App extends React.Component {
     }
 
     minusProduct(product) {
-        let buyProductsMap = this.state.buyProducts;
+        const buyProductsMap = this.state.buyProducts;
         let amount = buyProductsMap.get(product); //нашла количество
         if (amount > 1) {
             buyProductsMap.set(product, amount - 1)
@@ -117,8 +117,8 @@ class App extends React.Component {
     }
 
     removeProducts(product) {
-        let buyProductsMap = this.state.buyProducts;
-        let amount = buyProductsMap.get(product);
+        const buyProductsMap = this.state.buyProducts;
+        const amount = buyProductsMap.get(product);
         if (amount !== undefined) {
             buyProductsMap.delete(product)
         }
@@ -131,7 +131,6 @@ class App extends React.Component {
 
     render() {
         const popupMsg = this.state.popupMsg;
-
         return (
             <div className="site-content-holder" onClick={
                 (event) => {
@@ -165,7 +164,7 @@ class App extends React.Component {
                       addProductsInCartAction={this.addProductsInCart.bind(this)}
                       removeProductsAction={this.removeProducts.bind(this)}/>
                 <Feedback showPopupAction={this.showPopup.bind(this)}/>
-                <InfoOfShop/>
+                <ShopInfo/>
                 <Search searchProducts={this.searchProducts.bind(this)}
                         updateRefToProducts={this.updateRefToProducts.bind(this)}/>
                 <Products array={this.state.array}

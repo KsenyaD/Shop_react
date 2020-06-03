@@ -1,8 +1,8 @@
 import React from "react";
 
 function Toolbar(props) {
-    let menuDisplay = props.menuDisplay;
-    let changeMenuDisplay = props.changeMenuDisplay;
+    const menuDisplay = props.menuDisplay;
+    const changeMenuDisplay = props.changeMenuDisplay;
 
     window.onscroll = () => {
         const header = document.querySelector('.toolbar__list');
@@ -13,14 +13,13 @@ function Toolbar(props) {
         }
     };
 
-
     let toolbarNav = "toolbar__nav";
     if (menuDisplay) {
         toolbarNav += " toolbar__nav_active"
     }
 
-    let setCategory = props.setCategory;
-    let category = props.category;
+    const setCategory = props.setCategory;
+    const category = props.category;
 
     let main = "";
     if (category === "Main") {
