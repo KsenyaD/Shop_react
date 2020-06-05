@@ -466,7 +466,7 @@ input::-webkit-input-placeholder {
 
 /*стили картички продуктов начало*/
 .no-products-in-cart {
-    height: 300px;
+    height: 200px;
     width: 200px;
     display: block;
     margin: 60px auto 0;
@@ -871,5 +871,9 @@ input::-webkit-input-placeholder {
     .feedback__label {
         display: none;
     }
+
+    .no-products-in-cart {
+        margin-top: 150px;
+    }
 }
-/*# sourceMappingURL=main.css.map */
+
